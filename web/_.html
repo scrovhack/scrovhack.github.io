@@ -1,0 +1,1095 @@
+
+<html>
+<head>
+    <meta name="description" content="OpenRCE: The Open Reverse Code Engineering Community">
+    <meta name="keywords"    content="OpenRCE, Reverse Engineering, Reverse Code Engineering, IDA Pro, IDA Pro Scripts, IDA Pro Plugins, OllyDbg, OllyDbg Plugins, WinDbg, SoftIce">
+
+    <title>OpenRCE</title>
+
+            <script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            _uacct = "UA-71117-2";
+            urchinTracker();
+        </script>
+    
+            <link rel="stylesheet" href="/styles.css">
+        
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Articles" href="https://www.openrce.org/rss/feeds/articles" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Blogs" href="https://www.openrce.org/rss/feeds/blogs" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Blog Comments" href="https://www.openrce.org/rss/feeds/blog_comments" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Downloads" href="https://www.openrce.org/rss/feeds/downloads" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Forum Topics" href="https://www.openrce.org/rss/feeds/forum_topics" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Forum Posts" href="https://www.openrce.org/rss/feeds/forum_posts" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Repository" href="https://www.openrce.org/rss/feeds/site_updates" />
+    <link rel="alternate" type="application/rss+xml" title="OpenRCE: Site Updates" href="https://www.openrce.org/rss/feeds/site_updates" />
+</head>
+<body marginheight=0 leftmargin=0 topmargin=0 marginwidth=0 text="#000000">
+
+<!-- ARCHIVE BANNER -->
+<div style="background:#2a2a2a;color:#b0b0b0;text-align:center;padding:8px 12px;font-family:arial,helvetica,sans-serif;font-size:12px;border-bottom:1px solid #444;">
+    &#128218; <strong>OpenRCE</strong> is preserved as a read-only archive. Launched at RECon Montreal in 2005. Registration and posting are disabled.
+</div>
+<!-- END ARCHIVE BANNER -->
+
+<!-- BEGIN: initialize overlib -->
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<script type="text/javascript" language="JavaScript" src="/scripts/overlib/overlib.js"></script>
+
+<!-- END: initialize overlib -->
+
+<!-- BEGIN: column separating table -->
+<table border=0 cellpadding=0 cellspacing=0 width="100%" height="100%">
+    <tr>
+        <td class="section_left"   width=180 valign=top><center>
+
+<br><br><a class=img href="/"><img src="/img/logo.png" border=0></a><br><img src="/img/spacer.gif" width=1 height=15><br><br>
+
+<!-- BEGIN: main navigation -->
+<table border=0 cellpadding=0 cellspacing=0 class=navigation_menutable>
+    <tr>
+        <td width=150 valign=top>
+        <div class=navigation_menuitem>
+            <a class=navigation_menuitem href="/about/">About</a>
+            <a class=navigation_menuitem href="/">Articles</a>
+            <a class=navigation_menuitem href="/reference_library/bookstore">Book Store</a>
+            <a class=navigation_menuitem href="/distributed_rce/">Distributed RCE</a>
+            <a class=navigation_menuitem href="/downloads/">Downloads</a>
+            <a class=navigation_menuitem href="/event_calendar/">Event Calendar</a>
+            <a class=navigation_menuitem href="/forums/">Forums</a>
+            <a class=navigation_menuitem href="/irc/">Live Discussion</a>
+            <a class=navigation_menuitem href="/reference_library/">Reference Library</a>
+            <a class=navigation_menuitem href="/rss/">RSS Feeds</a>
+            <a class=navigation_menuitem href="/search/">Search</a>
+            <a class=navigation_menuitem href="/users/">Users</a>
+            <a class=navigation_menuitem href="/whats_new/">What's New</a>
+        </div>
+        </td>
+    </tr>
+</table>
+<!-- END: main navigation -->
+
+<br><br>
+
+<div class=nav_header>Customize Theme</div>
+<table border=0 cellpadding=2 cellspacing=0>
+    <tr>
+        <td>
+            <form method="POST" action="/process/set_stylesheet/">
+                <select class=input name=user_stylesheet>
+                    <option label="bluegrey" value="bluegrey">bluegrey</option>
+<option label="blackgreen" value="blackgreen" selected="selected">blackgreen</option>
+<option label="metal" value="metal">metal</option>
+<option label="simple" value="simple">simple</option>
+
+                </select>
+                <input class=input type=submit value="set">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<br>
+
+
+Flag: <a href="javascript:R=0; x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
+DI=document.images;
+DIL=DI.length; function A(){for(i=0; i-DIL; i++){if (DI[i].src.indexOf('/flags/')==-1){continue;}DIS=DI[ i ].style;
+DIS.position='absolute'; DIS.left=Math.sin(R*x1+i*x2+x3)*x4+x5;
+DIS.top=Math.cos(R*y1+i*y2+y3)*y4+y5}R++}setInterval('A()',5); void(0);">Tornado!</a>
+<a href="javascript:R=0; x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; DI=document.images; 
+DIL=DI.length; function A(){for(i=0; i-DIL; i++){if (DI[i].src.indexOf('/flags/')==-1){continue;}DIS=DI[ i ].style; 
+DIS.position='relative'; DIS.left=Math.sin(R*x1+i*x2+x3)*x4+x5; 
+DIS.top=Math.cos(R*y1+i*y2+y3)*y4+y5}R++}setInterval('A()',5); void(0);">Hurricane!</a>
+
+<br><br>
+</td>
+        <td class="section_border" width=1   valign=top><img src="/img/spacer.gif" width=1 height=1 border=0></td>
+        <td class="section_center"           valign=top><table width=100% border=0 cellpadding=10 cellspacing=0><tr><td>
+
+
+
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+<!--BEGIN: login/registration field -->
+<tr>
+    <td align=right>
+        <form name=login method=POST action="https://www.openrce.org/process/login">
+        <table border=0 cellpadding=2 cellspacing=0>
+            <tr>
+                <td class=login align=right>Login:</td>
+                <td class=login align=left> <input class=login_input size=16 type=text name=username></td>
+                <td class=login align=right>Password:</td>
+                <td class=login align=left> <input class=login_input size=16 type=password name=password></td>
+                <td class=login align=right><input class=login_input         type=submit   value="Login"></td>
+            </tr>
+            <tr>
+                <td class=login align=left colspan=4><input class=login_input type=checkbox name=remember_me CHECKED>Remember Me</td>
+                <td class=login align=right><a href="/profile/new">Register</a></td>
+            </tr>
+        </table>
+        </form>
+
+        <script language="JavaScript">
+            document.login.username.focus();
+        </script>
+    </td>
+</tr>
+<!--END: login/registration field -->
+</td></tr></table>
+
+<div class=header>OpenRCE Articles</div><br>
+
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">Memoryze Memory Forensics Tool</font></td>
+        <td class=table_sub_header align=right>Created: Wednesday, November 26 2008 20:06.40 CST</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/us.gif"> <a href="/profile/view/peter">peter</a> <a href="/messages/compose/peter"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>100313</td>
+                </tr>
+            </table>
+
+            <br>
+
+            The goal of this article is to demonstrate how simple malware analysis can be using Memoryze and some good old fashion common sense. Readers should have some knowledge of how malware works, and be somewhat familiar with <a href="http://www.mandiant.com/software/memoryze.htm">Memoryze</a>. A good place to familiarize yourself with Memoryze is the user guide included in the installer.  
+<br><br>
+Memoryze is designed to aid in memory analysis in incident response scenarios. However, it has many useful features that can be utilized when doing malware analysis. Memoryze is special in that it does not rely on API calls. Instead Memoryze parses the operating systems' internal structures to determine for itself what the operating system and its running processes and drivers are doing. 
+
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/32"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/32"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/32">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/32">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row1>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/bytecod3r"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/bytecod3r">bytecod3r</a></td>
+                            <td align=left>' OR SLEEP(5)-- </td>
+                            <td align=left>Thursday, October 23 2025 14:41.09 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/bytecod3r"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/bytecod3r">bytecod3r</a></td>
+                            <td align=left>probe single quote</td>
+                            <td align=left>Thursday, October 23 2025 14:33.27 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/bytecod3r"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/bytecod3r">bytecod3r</a></td>
+                            <td align=left>Timing baseline</td>
+                            <td align=left>Thursday, October 23 2025 14:10.29 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/bytecod3r"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/bytecod3r">bytecod3r</a></td>
+                            <td align=left>Baseline comment</td>
+                            <td align=left>Thursday, October 23 2025 13:57.26 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/bytecod3r"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/bytecod3r">bytecod3r</a></td>
+                            <td align=left></td>
+                            <td align=left>Tuesday, October  7 2025 11:41.22 CDT</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">The Molecular Virology of Lexotan32: Metamorphism Illustrated</font></td>
+        <td class=table_sub_header align=right>Created: Thursday, August 16 2007 16:58.00 CDT</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/il.gif"> <a href="/profile/view/orr">orr</a> <a href="/messages/compose/orr"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>73856</td>
+                </tr>
+            </table>
+
+            <br>
+
+            This paper is a direct descendent of my previous one regarding the metamorphic engine of the <a href="/articles/full_view/27">W32.Evol</a> virus. I advise you to take a look at it before reading this one, or at least be acquainted with the subject of metamorphism. The focus of this paper is the special engine of the <b>Lexotan32</b> virus. 
+<br><br>
+The virus was released in 29A#6 Virus Magazine in 2002, the Annus Mirabilis of metamorphic viruses. The virus was created by the prolific VX coder, <b>Vecna</b>, and was one of the last complex creations of this kind. I could further elaborate on the genealogy of this virus, but I think it is sufficient to say that this virus is a culmination of many of the techniques developed throughout the author's career.
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/29"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/29"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/29">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/29">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/kr.gif"></td>
+                            <td align=left><a href="/messages/compose/live2skull"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/live2skull">live2skull</a></td>
+                            <td align=left>amazing article :)</td>
+                            <td align=left>Sunday, May  8 2016 00:28.54 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/in.gif"></td>
+                            <td align=left><a href="/messages/compose/redbone"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/redbone">redbone</a></td>
+                            <td align=left>good information ....</td>
+                            <td align=left>Tuesday, July 12 2011 02:56.10 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/kr.gif"></td>
+                            <td align=left><a href="/messages/compose/tgnice"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/tgnice">tgnice</a></td>
+                            <td align=left>cool :)</td>
+                            <td align=left>Saturday, June 18 2011 03:18.50 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/lazyworm"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/lazyworm">lazyworm</a></td>
+                            <td align=left>very nice!I need it.</td>
+                            <td align=left>Wednesday, June 30 2010 20:25.49 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/kr.gif"></td>
+                            <td align=left><a href="/messages/compose/m4dnut"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/m4dnut">m4dnut</a></td>
+                            <td align=left>it's so cool~! thnaks for your effots.
+i alway...</td>
+                            <td align=left>Wednesday, July  9 2008 20:32.17 CDT</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">Defeating HyperUnpackMe2 With an IDA Processor Module</font></td>
+        <td class=table_sub_header align=right>Created: Thursday, February 22 2007 19:21.58 CST</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/us.gif"> <a href="/profile/view/RolfRolles">RolfRolles</a> <a href="/messages/compose/RolfRolles"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>103265</td>
+                </tr>
+            </table>
+
+            <br>
+
+            This article is about breaking modern executable protectors.  The target, a 
+crackme known as <a href="http://crackmes.de/users/thehyper/hyperunpackme2/">HyperUnpackMe2</a>,
+is modern in the sense that it does not follow the standard packer model of 
+yesteryear wherein the contents of the executable in memory, minus the import 
+information, are eventually restored to their original forms.
+<br><br>
+Modern protectors mutilate the original code section, use virtual machines 
+operating upon polymorphic bytecode languages to slow reverse engineering, and
+take active measures to frustrate attempts to dump the process.  Meanwhile, 
+the complexity of the import protections and the amount of anti-debugging 
+measures has steadily increased.
+<br><br>
+This article dissects such a protector and offers a static unpacker through 
+the use of an IDA processor module and a custom plugin.  The commented IDB 
+files and the processor module source code are included.  In addition, an
+appendix covers IDA processor module construction.  In short, this article is
+an exercise in overkill.
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/28"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/28"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/28">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/28">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row1>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/ndaj3"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/ndaj3">ndaj3</a></td>
+                            <td align=left>RolfRolles: Thank you for Writing an Great tuto...</td>
+                            <td align=left>Friday, September  4 2009 01:25.09 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/cn.gif"></td>
+                            <td align=left><a href="/messages/compose/eirc"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/eirc">eirc</a></td>
+                            <td align=left>Wow thanks a lot��</td>
+                            <td align=left>Saturday, October 11 2008 05:00.28 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/cz.gif"></td>
+                            <td align=left><a href="/messages/compose/h4x0r"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/h4x0r">h4x0r</a></td>
+                            <td align=left>comprehensive analysis, thanks.
+
+for those no...</td>
+                            <td align=left>Tuesday, May 15 2007 04:15.56 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left>&nbsp;</td>
+                            <td align=left><a href="/messages/compose/PoincareLei"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/PoincareLei">PoincareLei</a></td>
+                            <td align=left>good analysis..
+
+expecting RolfRolles  to wri...</td>
+                            <td align=left>Wednesday, April  4 2007 06:26.45 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/ro.gif"></td>
+                            <td align=left><a href="/messages/compose/bLaCkeye"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/bLaCkeye">bLaCkeye</a></td>
+                            <td align=left>Impressive display of reverse engineering and c...</td>
+                            <td align=left>Friday, February 23 2007 19:47.13 CST</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">The Viral Darwinism of W32.Evol</font></td>
+        <td class=table_sub_header align=right>Created: Tuesday, February  6 2007 14:26.08 CST</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/il.gif"> <a href="/profile/view/Orr">Orr</a> <a href="/messages/compose/Orr"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>74835</td>
+                </tr>
+            </table>
+
+            <br>
+
+            The W32.Evol virus was discovered around July 2000. Its name is derived from a string found in the virus, but much more can be implied from the name. Up until then, most of the viruses were using Polymorphic engines in order to hide themselves from Anti-Virus scanners. The engine would encrypt the virus with a different key on every generation, and would generate a small, variant decryptor that would consist of different operations but remain functionally equivalent. This technique was beginning to wear out as AV scanners would trace virus-decryption until it was decrypted in memory, visible and clear.
+<br><br>
+This article explores the features and functionality of the metamorphic engine of the Evol virus, the first virus to utilize a 'true' metamorphic engine according to Symantec.
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/27"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/27"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/27">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/27">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/cn.gif"></td>
+                            <td align=left><a href="/messages/compose/nEINEI"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/nEINEI">nEINEI</a></td>
+                            <td align=left>good work~~</td>
+                            <td align=left>Friday, November 27 2009 04:04.08 CST</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/in.gif"></td>
+                            <td align=left><a href="/messages/compose/adityaks"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/adityaks">adityaks</a></td>
+                            <td align=left>nice one man</td>
+                            <td align=left>Wednesday, June 20 2007 06:07.58 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/il.gif"></td>
+                            <td align=left><a href="/messages/compose/Orr"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/Orr">Orr</a></td>
+                            <td align=left>The mistake is in the paper and not in the engi...</td>
+                            <td align=left>Friday, April  6 2007 16:02.00 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/sk.gif"></td>
+                            <td align=left><a href="/messages/compose/eraser"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/eraser">eraser</a></td>
+                            <td align=left>You are right MazeGen.
+
+[code]
+EB cb JMP cb ...</td>
+                            <td align=left>Wednesday, April  4 2007 13:33.07 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/cz.gif"></td>
+                            <td align=left><a href="/messages/compose/MazeGen"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/MazeGen">MazeGen</a></td>
+                            <td align=left>Very interesting article, thanks.
+
+There's on...</td>
+                            <td align=left>Friday, March 30 2007 02:57.38 CDT</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">Kernel User-Mode Debugging Support (Dbgk)</font></td>
+        <td class=table_sub_header align=right>Created: Wednesday, January 31 2007 12:05.10 CST</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/ca.gif"> <a href="/profile/view/AlexIonescu">AlexIonescu</a> <a href="/messages/compose/AlexIonescu"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>57378</td>
+                </tr>
+            </table>
+
+            <br>
+
+            In part three of this three part article series, the kernel-mode interface to Windows debugging is dissected in detail. The reader is expected to have some basic knowledge of C and general NT Kernel architecture and semantics. Also, this is not an introduction on what debugging is or how to write a debugger. It is meant as a reference for experienced debugger writers, or curious security experts. The reader is expected to have some basic knowledge of C and general NT Kernel architecture and semantics. Also, this is not an introduction on what debugging is or how to write a debugger. It is meant as a reference for experienced debugger writers, or curious security experts.
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/26"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/26"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/26">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/26">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/in.gif"></td>
+                            <td align=left><a href="/messages/compose/praveendarshanam"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/praveendarshanam">praveendarshanam</a></td>
+                            <td align=left>good articles!! all partz r amazing!!!</td>
+                            <td align=left>Friday, September 18 2009 15:18.19 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/cn.gif"></td>
+                            <td align=left><a href="/messages/compose/flyingkisser"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/flyingkisser">flyingkisser</a></td>
+                            <td align=left>very good,very powerful!So,where is part I and ...</td>
+                            <td align=left>Tuesday, January 15 2008 20:17.43 CST</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/in.gif"></td>
+                            <td align=left><a href="/messages/compose/anonymouse"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/anonymouse">anonymouse</a></td>
+                            <td align=left>so this is how some of the functions in syser o...</td>
+                            <td align=left>Thursday, February  1 2007 23:35.29 CST</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/ir.gif"></td>
+                            <td align=left><a href="/messages/compose/MohammadHosein"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/MohammadHosein">MohammadHosein</a></td>
+                            <td align=left>thank you for these excellent series of articles</td>
+                            <td align=left>Thursday, February  1 2007 15:29.03 CST</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/us.gif"></td>
+                            <td align=left><a href="/messages/compose/JasonGeffner"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/JasonGeffner">JasonGeffner</a></td>
+                            <td align=left>Awesome job! I want a &quot;part four&quot;! :)</td>
+                            <td align=left>Thursday, February  1 2007 13:56.34 CST</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">Windows Native Debugging Internals</font></td>
+        <td class=table_sub_header align=right>Created: Monday, November 13 2006 13:14.18 CST</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/ca.gif"> <a href="/profile/view/AlexIonescu">AlexIonescu</a> <a href="/messages/compose/AlexIonescu"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>56766</td>
+                </tr>
+            </table>
+
+            <br>
+
+            In part two of this three part article series, the native interface to Windows debugging is dissected in detail.
+
+The reader is expected to have some basic knowledge of C and general NT Kernel architecture and semantics. Also, this is not an introduction on what debugging is or how to write a debugger. It is meant as a reference for experienced debugger writers, or curious security experts.
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/25"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/25"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/25">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/25">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/eg.gif"></td>
+                            <td align=left><a href="/messages/compose/halsten"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/halsten">halsten</a></td>
+                            <td align=left>Thanks for sharing this! Keep it up (Y).
+
+-- ...</td>
+                            <td align=left>Monday, January 22 2007 01:55.32 CST</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/fr.gif"></td>
+                            <td align=left><a href="/messages/compose/msuiche"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/msuiche">msuiche</a></td>
+                            <td align=left>That's a very pretty paper you wrote again ther...</td>
+                            <td align=left>Monday, November 13 2006 15:40.46 CST</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td class=table_sub_header align=left><font size="+1">Windows User Mode Debugging Internals</font></td>
+        <td class=table_sub_header align=right>Created: Tuesday, October 31 2006 18:02.31 CST</td>
+    </tr>
+    <tr>
+        <td colspan=2 valign=top>
+            <fieldset>
+            <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                <tr>
+                    <td width=50% align=left><b>Author: </b><img src="/img/flags/ca.gif"> <a href="/profile/view/AlexIonescu">AlexIonescu</a> <a href="/messages/compose/AlexIonescu"><img src="/img/email_icon.gif" border=0></a></td>
+                    <td width=50% align=right><b># Views: </b>57848</td>
+                </tr>
+            </table>
+
+            <br>
+
+            The internal mechanisms of what allows user-mode debugging to work have rarely ever been fully explained. Even worse, these mechanisms have radically changed in Windows XP, when much of the support was re-written, as well as made more subsystem portable by including most of the routines in ntdll, as part of the Native API. This three part series will explain this functionality, starting from the Win32 (kernel32) viewpoint all the way down (or up) to the NT Kernel (ntoskrnl) component responsible for this support, called Dbgk, while taking a stop to the NT System Library (ntdll) and its DbgUi component.
+<br><br>
+The reader is expected to have some basic knowledge of C and general NT Kernel architecture and semantics. Also, this is not an introduction on what debugging is or how to write a debugger. It is meant as a reference for experienced debugger writers, or curious security experts.
+
+            <br><br>
+            
+            <img src="/img/full_article.png" border=0> <a href="/articles/full_view/24"><b>Full Article ...</b></a>
+            &nbsp;&nbsp;
+            <img src="/img/print.png" border=0> <a href="/articles/print_view/24"><b>Printer Friendly ...</b></a>
+            &nbsp;&nbsp; 
+            <b><a href="/articles/comment/24">Write Comment</a></b>
+            
+                            <b> &nbsp;&nbsp; |  &nbsp;&nbsp; <a href="/articles/view_comments/24">View Complete Comments</a></b>
+                <br><br>
+                <table border=0 cellpadding=2 cellspacing=0 width=100%>
+                    <tr>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>&nbsp;</td>
+                        <td align=left class=table_sub_sub_header>Username</td>
+                        <td align=left class=table_sub_sub_header>Comment Excerpt</td>
+                        <td align=left class=table_sub_sub_header>Date</td>              
+                    </tr>
+                        
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/kr.gif"></td>
+                            <td align=left><a href="/messages/compose/securex0"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/securex0">securex0</a></td>
+                            <td align=left>Awesome jobs! I am waiting next instruction.</td>
+                            <td align=left>Sunday, April 15 2012 21:55.51 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/yu.gif"></td>
+                            <td align=left><a href="/messages/compose/Civa"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/Civa">Civa</a></td>
+                            <td align=left>Great article Alex!
+I wonder If you can explai...</td>
+                            <td align=left>Tuesday, March  9 2010 05:07.34 CST</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/cn.gif"></td>
+                            <td align=left><a href="/messages/compose/shijiaoan"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/shijiaoan">shijiaoan</a></td>
+                            <td align=left>great</td>
+                            <td align=left>Monday, May  4 2009 21:48.06 CDT</td>
+                        </tr>
+                                            <tr class=table_row1>
+                            <td align=left><img src="/img/flags/dz.gif"></td>
+                            <td align=left><a href="/messages/compose/NeOXQuiCk"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/NeOXQuiCk">NeOXQuiCk</a></td>
+                            <td align=left>Nice,thx for sharing.. its helped me a lot..
+
+...</td>
+                            <td align=left>Tuesday, April  3 2007 17:55.47 CDT</td>
+                        </tr>
+                                            <tr class=table_row2>
+                            <td align=left><img src="/img/flags/it.gif"></td>
+                            <td align=left><a href="/messages/compose/tinybyte"><img src="/img/email_icon.gif" border=0></a></td>
+                            <td align=left><a href="/profile/view/tinybyte">tinybyte</a></td>
+                            <td align=left>Nice stuff! Waiting for the sequels :)</td>
+                            <td align=left>Friday, December  8 2006 15:25.33 CST</td>
+                        </tr>
+                                    </table>
+                        </fieldset>
+        </td>
+    </tr>
+</table>
+<br>
+
+<div class=header>Archived Articles</div><br>
+
+<fieldset><legend>Archived</legend>
+<table border=0 cellpadding=2 cellspacing=0 width=100%>
+    <tr>
+        <td align=left class=table_sub_sub_header>Title</td>
+        <td align=left class=table_sub_sub_header>&nbsp;</td>
+        <td align=left class=table_sub_sub_header>Author</td>
+        <td align=left class=table_sub_sub_header nowrap># Views</td>
+        <td align=left class=table_sub_sub_header nowrap>Publish Date</td>
+    </tr>
+
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/23">Reversing Microsoft Visual C++ Part II: Classes, Methods and RTTI</a></b></td>
+            <td nowrap><img src="/img/flags/be.gif"></td>
+            <td nowrap><a href="/profile/view/igorsk">igorsk</a></td>
+            <td nowrap align="right">286097</td>
+            <td nowrap align="right">September 21 2006</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/22">Microsoft Patching Internals</a></b></td>
+            <td nowrap><img src="/img/flags/cz.gif"></td>
+            <td nowrap><a href="/profile/view/EliCZ">EliCZ</a></td>
+            <td nowrap align="right">55693</td>
+            <td nowrap align="right">April 26 2006</td>
+        </tr>
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/21">Reversing Microsoft Visual C++ Part I: Exception Handling</a></b></td>
+            <td nowrap><img src="/img/flags/be.gif"></td>
+            <td nowrap><a href="/profile/view/igorsk">igorsk</a></td>
+            <td nowrap align="right">186535</td>
+            <td nowrap align="right">March  6 2006</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/20">Technical Analysis of MS06-001</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/stephanc">stephanc</a></td>
+            <td nowrap align="right">39299</td>
+            <td nowrap align="right">February  6 2006</td>
+        </tr>
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/19">FUTo</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/peter">peter</a></td>
+            <td nowrap align="right">56162</td>
+            <td nowrap align="right">January  5 2006</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/18">Plausible Deniability</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/joestewart">joestewart</a></td>
+            <td nowrap align="right">38568</td>
+            <td nowrap align="right">November 17 2005</td>
+        </tr>
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/17">Reverse Engineering Microsoft OLE</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/joestewart">joestewart</a></td>
+            <td nowrap align="right">68089</td>
+            <td nowrap align="right">September 12 2005</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/16">File Format Reversing - EverQuest II VPK</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/daeken">daeken</a></td>
+            <td nowrap align="right">66972</td>
+            <td nowrap align="right">September  6 2005</td>
+        </tr>
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/15">WINLDRA.EXE: Reversing a Basic Encryption Algorithm</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/Gerry">Gerry</a></td>
+            <td nowrap align="right">61076</td>
+            <td nowrap align="right">August 23 2005</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/14">Reversing HDSpoof - A Tutorial</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/smidgeonsoft">smidgeonsoft</a></td>
+            <td nowrap align="right">80493</td>
+            <td nowrap align="right">August  2 2005</td>
+        </tr>
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/13">Creating IDA Plug-ins with C# or VB6</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/dzzie">dzzie</a></td>
+            <td nowrap align="right">59130</td>
+            <td nowrap align="right">July 15 2005</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/12">Process Stalker vs. MS05-030</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/pedram">pedram</a></td>
+            <td nowrap align="right">56982</td>
+            <td nowrap align="right">July  6 2005</td>
+        </tr>
+            <tr class=table_row1>
+            <td width="100%"><b><a href="/articles/full_view/11">Introduction to IDAPython</a></b></td>
+            <td nowrap><img src="/img/flags/es.gif"></td>
+            <td nowrap><a href="/profile/view/ero">ero</a></td>
+            <td nowrap align="right">104357</td>
+            <td nowrap align="right">June 24 2005</td>
+        </tr>
+            <tr class=table_row2>
+            <td width="100%"><b><a href="/articles/full_view/1">OpenRCE Site Launch</a></b></td>
+            <td nowrap><img src="/img/flags/us.gif"></td>
+            <td nowrap><a href="/profile/view/pedram">pedram</a></td>
+            <td nowrap align="right">31538</td>
+            <td nowrap align="right">June 17 2005</td>
+        </tr>
+    
+</table>
+</fieldset>
+
+</td></tr></table>
+</td>
+        <td class="section_border" width=1   valign=top><img src="/img/spacer.gif" width=1 height=1 border=0></td>
+        <td class="section_right"  width=200 valign=top><table width=100% border=0 cellpadding=10 cellspacing=0><tr><td>
+
+
+<p align=right>
+There are <b>31,328</b> total registered users.
+</p>
+
+<!--
+<table border=0 cellpadding=2 cellspacing=0 width="100%">
+    <tr>
+        <td colspan=3 class=table_header_right>Advertisement</td>
+    </tr>
+    <tr class=table_row1_right>
+        <td align=left><a 
+href="http://www.infosecinstitute.com/courses/reverse_engineering_training.html">5 Day Hands-On RE 
+Training</a> at <a href="http://www.infosecinstitute.com">InfoSec Institute</a>.<br><br>Learn to 
+reverse Win32 binaries, malware and obfuscated code with IDA Pro, OllyDbg and other RCE 
+tools.<br><br>Taught by experts from the OpenRCE community.</td>
+    </tr>
+</table>
+-->
+
+<br>
+<table border=0 cellpadding=2 cellspacing=0 width="100%">
+    <tr>
+        <td colspan=2 class=table_header_right>Recently Created Topics</td>
+    </tr>
+    
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2460">[help] Unpacking VMP...</a></td>
+            <td><div class=small_right>Mar/12</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2459">Reverse Engineering ...</a></td>
+            <td><div class=small_right>Jul/06</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2444">let 'IDAPython' impo...</a></td>
+            <td><div class=small_right>Sep/24</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2443">set 'IDAPython' as t...</a></td>
+            <td><div class=small_right>Sep/24</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2442">GuessType return une...</a></td>
+            <td><div class=small_right>Sep/20</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2441">About retrieving the...</a></td>
+            <td><div class=small_right>Sep/07</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2440">How to find specific...</a></td>
+            <td><div class=small_right>Aug/15</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2439">How to get data depe...</a></td>
+            <td><div class=small_right>Jul/07</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2438">Identify RVA data in...</a></td>
+            <td><div class=small_right>May/06</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2436">Question about memor...</a></td>
+            <td><div class=small_right>Dec/12</div></td>
+        </tr>
+    </table>
+
+<br><br>
+
+<table border=0 cellpadding=2 cellspacing=0 width="100%">
+    <tr>
+        <td colspan=2 class=table_header_right>Recent Forum Posts</td>
+    </tr>
+    
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2343#4870">Finding the procedur...</a></td>
+            <td align=right><div align=right class=small_right>rolEYder</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2378#4869">Question about debbu...</a></td>
+            <td align=right><div align=right class=small_right>rolEYder</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2438#4865">Identify RVA data in...</a></td>
+            <td align=right><div align=right class=small_right>sohlow</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2444#4864">let 'IDAPython' impo...</a></td>
+            <td align=right><div align=right class=small_right>sohlow</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2440#4863">How to find specific...</a></td>
+            <td align=right><div align=right class=small_right>hackgreti</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/2367#4862">Problem with ollydbg</a></td>
+            <td align=right><div align=right class=small_right>sh3dow</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2434#4861">How can I write olly...</a></td>
+            <td align=right><div align=right class=small_right>sh3dow</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/1914#4860">New LoadMAP plugin v...</a></td>
+            <td align=right><div align=right class=small_right>mefisto...</div></td>
+        </tr>
+            <tr class=table_row1_right>
+            <td><a href="/forums/posts/2424#4859">Intel pin in loaded ...</a></td>
+            <td align=right><div align=right class=small_right>djnemo</div></td>
+        </tr>
+            <tr class=table_row2_right>
+            <td><a href="/forums/posts/866#4858">OOP_RE tool available?</a></td>
+            <td align=right><div align=right class=small_right>Bl4ckm4n</div></td>
+        </tr>
+    </table>
+
+<br><br>
+
+<table border=0 cellpadding=2 cellspacing=0 width="100%">
+    <tr>
+        <td colspan=3 class=table_header_right>Recent Blog Entries</td>
+    </tr>
+    
+            
+        <tr class=table_row1_right>
+            <td><img src="/img/flags/eg.gif"></td>
+            <td width="100%"><a href="/blog/browse/halsten">halsten</a></td>
+            <td><div class=small_right>Mar/14</div></td>
+        </tr>
+        <tr class=table_row1_right>
+            <td colspan=3><a href="/blog/view/5106/Breaking_IonCUBE_VM">Breaking IonCUBE VM</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row2_right>
+            <td><img src="/img/flags/no.gif"></td>
+            <td width="100%"><a href="/blog/browse/oleavr">oleavr</a></td>
+            <td><div class=small_right>Oct/24</div></td>
+        </tr>
+        <tr class=table_row2_right>
+            <td colspan=3><a href="/blog/view/5104/Anatomy_of_a_code_tracer">Anatomy of a code tracer</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row1_right>
+            <td><img src="/img/flags/pl.gif"></td>
+            <td width="100%"><a href="/blog/browse/hasherezade">hasherezade</a></td>
+            <td><div class=small_right>Sep/24</div></td>
+        </tr>
+        <tr class=table_row1_right>
+            <td colspan=3><a href="/blog/view/5103/IAT_Patcher_-_new_tool_for_easy_API_hooking">IAT Patcher - new tool for ...</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row2_right>
+            <td><img src="/img/flags/no.gif"></td>
+            <td width="100%"><a href="/blog/browse/oleavr">oleavr</a></td>
+            <td><div class=small_right>Aug/27</div></td>
+        </tr>
+        <tr class=table_row2_right>
+            <td colspan=3><a href="/blog/view/5102/CryptoShark:_code_tracer_based_on_dynamic_recompilation">CryptoShark: code tracer ba...</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row1_right>
+            <td><img src="/img/flags/no.gif"></td>
+            <td width="100%"><a href="/blog/browse/oleavr">oleavr</a></td>
+            <td><div class=small_right>Jun/25</div></td>
+        </tr>
+        <tr class=table_row1_right>
+            <td colspan=3><a href="/blog/view/5062/Build_a_debugger_in_5_minutes">Build a debugger in 5 minutes</a><br><br></td>
+        </tr>        
+        
+    <tr>
+        <td colspan=3 class=table_row1_right align=right>
+            <a href="/blog/recent_list">More ...</a>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+
+<table border=0 cellpadding=2 cellspacing=0 width="100%">
+    <tr>
+        <td colspan=3 class=table_header_right>Recent Blog Comments</td>
+    </tr>
+    
+            
+        <tr class=table_row2_right>
+            <td><img src="/img/flags/in.gif"></td>
+            <td width="100%"><a href="/profile/view/nieo">nieo</a> on:</td>
+            <td><div class=small_right>Mar/22</div></td>
+        </tr>
+        <tr class=table_row2_right>
+            <td colspan=3><a href="/blog/view/5103/IAT_Patcher_-_new_tool_for_easy_API_hooking">IAT Patcher - new tool for ...</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row1_right>
+            <td><img src="/img/flags/il.gif"></td>
+            <td width="100%"><a href="/profile/view/djnemo">djnemo</a> on:</td>
+            <td><div class=small_right>Nov/17</div></td>
+        </tr>
+        <tr class=table_row1_right>
+            <td colspan=3><a href="/blog/view/1564/Kernel_debugger_vs_user_mode_exceptions">Kernel debugger vs user mod...</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row2_right>
+            <td><img src="/img/flags/cn.gif"></td>
+            <td width="100%"><a href="/profile/view/acel">acel</a> on:</td>
+            <td><div class=small_right>Nov/14</div></td>
+        </tr>
+        <tr class=table_row2_right>
+            <td colspan=3><a href="/blog/view/1564/Kernel_debugger_vs_user_mode_exceptions">Kernel debugger vs user mod...</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row1_right>
+            <td><img src="/img/flags/us.gif"></td>
+            <td width="100%"><a href="/profile/view/pedram">pedram</a> on:</td>
+            <td><div class=small_right>Dec/21</div></td>
+        </tr>
+        <tr class=table_row1_right>
+            <td colspan=3><a href="/blog/view/4784/frida.github.io:_scriptable_reversing_tool_for_Windows,_Mac,_Linux_and_iOS">frida.github.io: scriptable...</a><br><br></td>
+        </tr>        
+            
+        <tr class=table_row2_right>
+            <td></td>
+            <td width="100%"><a href="/profile/view/capadleman">capadleman</a> on:</td>
+            <td><div class=small_right>Jun/19</div></td>
+        </tr>
+        <tr class=table_row2_right>
+            <td colspan=3><a href="/blog/view/1635/Using_NtCreateThreadEx_for_Remote_Thread_Execution_in_System_Process_for_Vista_&amp;_Windows7">Using NtCreateThreadEx for ...</a><br><br></td>
+        </tr>        
+        
+    <tr>
+        <td colspan=3 class=table_row1_right align=right>
+            <a href="/blog/recent_comments">More ...</a>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+
+<table border=0 cellpadding=2 cellspacing=0 width="100%">
+    <tr>
+        <td class=table_header_right>Imagery</td>
+    </tr>
+    <tr>
+        <td align=center>
+            <b>SoySauce Blueprint</b><br><small>Jun  6, 2008</small><br><br>
+            <a class=img href="/imagery/gallery"><img src="/imagery/files/soysauce_blueprint_thumbnail.gif" width=200 border=0></a>
+            <p align=right><a href="/imagery/files/soysauce_blueprint.gif"><small>[+] expand</small></p>
+            <a href="/imagery/gallery">View Gallery</a> (11) / <a href="/messages/compose/pedram">Submit</a>
+        </td>
+    </tr>
+</table>
+
+</td></tr></table></td>
+    </tr>
+</table>
+<!-- END: column separating table -->
+
+</body>
+</html>
+
