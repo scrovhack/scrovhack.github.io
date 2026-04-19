@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<polyglot>
+  <services>
+    <service name="symfony" url="http://localhost:8000/api/hello"/>
+    <service name="lua" url="http://localhost:8081/lua/hello"/>
+    <service name="scala" url="http://localhost:9000/scala/hello"/>
+  </services>
+</polyglot>
